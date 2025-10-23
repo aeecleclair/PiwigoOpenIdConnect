@@ -139,6 +139,17 @@
 			<i>{'This claim is used for local identification and must return a unique value for each user. Falls back to \'sub\'.'|translate}</i>
 		</li>
 		<li>
+			<input type="checkbox" name="manage_groups" id="manage_groups" {if isset($manage_groups) and $manage_groups}checked="checked"{/if}>
+			<label for="manage_groups">{'Enable groups management'|translate}</label>
+		</li>
+		<li>
+			<label for="groups_claim">{'Groups claim'|translate}</label>
+			<br />
+			<input type="text" size=50 name="groups_claim" id="groups_claim" value="{$groups_claim|default:''}">
+			<br />
+			<i>{'When groups management is enabled, groups are added to users upon connection. Groups claim is used to create and assign groups to users. This claim should be an array of [group_name]. The claim falls back to \'groups\'.'|translate}</i>
+		</li>
+		<li>
 			<label for="proxy">{'HTTP Proxy'|translate}</label>
 			<br />
 			<input type="text" size=50 name="proxy" id="proxy" value="{$proxy}">
